@@ -1,0 +1,3 @@
+# This file is needed so it can be displayed in-game.
+openttd-opensfx binary: extra-license-file usr/share/games/openttd/baseset/opensfx/license.txt
+openttd-opensfx binary: package-contains-documentation-outside-usr-share-doc usr/share/games/openttd/baseset/opensfx/license.txt
