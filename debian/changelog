@@ -1,5 +1,87 @@
-template-repository (1.0-1) unstable; urgency=medium
+openttd-opensfx (1.0.3-2) unstable; urgency=medium
 
-  * Initial release
+  * No changes, just bump version for source-only upload after binary upload
+    to NEW.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 24 Jan 2022 14:22:05 +0100
+
+openttd-opensfx (1.0.3-1) unstable; urgency=medium
+
+  * [ad9eb60] Update watch file
+  * [3274eda] Add upstream metadata
+  * [3dcecde] Bump standards version to 4.6.0 (no changes required)
+  * [598ef40] New upstream release 1.0.3
+  * [bd24177] Support DEB_BUILD_OPTIONS=terse
+  * [5b64af2] Set Rules-Requires-Root: no for building
+  * [dfab5f6] Bump debhelper version to v13
+  * [087dcd5] Update upstream homepage
+  * [e3ef4da] Adapt copyright file to new licensing
+  * [22d3f3e] Move from non-free to main
+  * [b992045] Add grfcodec to Build-Depends
+  * [7a2827b] Disable MD5 sum checks for built files
+  * [ab2de62] Use (and slightly patch) make install for installation
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Mon, 27 Dec 2021 16:08:15 +0100
+
+openttd-opensfx (0.2.3-6) unstable; urgency=medium
+
+  * [2dd7176] Allow auto-building of this package
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 20 Jul 2018 11:42:21 +0200
+
+openttd-opensfx (0.2.3-5) unstable; urgency=medium
+
+  * [bfbc19b] Bump debhelper version to v11
+  * [a51d969] Bump standards version to 4.1.4
+  * [6fcf60f] Convert Priority: extra to optional
+  * [2b2d772] Mark as Multi-arch: foreign
+  * [6a69a59] Respect nocheck in DEB_BUILD_OPTIONS
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 10 May 2018 22:03:44 +0200
+
+openttd-opensfx (0.2.3-4) unstable; urgency=medium
+
+  * [0a93e67] Don't install as a tarball
+  * [be40f52] Add lintian override for license.txt
+  * [05e9885] Enable verbose building
+  * [c8954e6] Update watch file, upstream changed download urls.
+  * [259cd3d] Use canonical Vcs urls (on anonscm.debian.org).
+  * [ec6dc37] Bump Standards-Version to 3.9.6, no changes required.
+  * [4ade5a7] Install into /usr/share/games/openttd/baseset.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 23 Oct 2014 12:47:27 +0200
+
+openttd-opensfx (0.2.3-3) unstable; urgency=low
+
+  * [322f63b] Bump Standards-Version to 3.9.3, no changes required.
+  * [8b61f27] Update copyright file to use the new copyright-format-1.0.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Wed, 18 Apr 2012 17:35:12 +0200
+
+openttd-opensfx (0.2.3-2) unstable; urgency=low
+
+  * [bea6451] Update watch file to new download location.
+  * [a24f1a2] Bump Standards-Version to 3.9.2, no changes required.
+  * [4be81b3] Reword description to comply with the policy.
+  * [dc3d9b4] Reword the description again to remove the last traces of the
+    word "free" from it.
+    Thanks to Ivan Shmakov for the updated description (Closes: #647759)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Thu, 17 Nov 2011 15:02:31 +0100
+
+openttd-opensfx (0.2.3-1) unstable; urgency=low
+
+  [ Matthijs Kooijman ]
+  * [9f4d281] New upstream release 0.2.3.
+  * [5801386] Don't use "free" or "open source" to descripe OpenSFX.
+    (Closes: #573952)
+  * [487e4a1] Remove install-mkdir.patch, the issue was fixed upstream.
+  * [bf7b68e] Enable md5 sum checking after build.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Fri, 02 Apr 2010 15:45:39 +0200
+
+openttd-opensfx (0.2.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #571144)
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 23 Feb 2010 22:09:04 +0100

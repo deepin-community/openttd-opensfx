@@ -1,0 +1,10 @@
+openttd-opensfx for Debian
+--------------------------
+
+This package is distributed under the Creative Commons sampling plus
+license, since most of the samples used have been obtained under that
+license. The sampling plus license contains restrictions that do not
+follow the Debian Free Software Guidelines, so this package is shipped
+in the non-free distribution.
+
+ -- Matthijs Kooijman <matthijs@stdin.nl>  Tue, 23 Feb 2010 18:37:17 +0100

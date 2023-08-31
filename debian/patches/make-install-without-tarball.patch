@@ -1,0 +1,19 @@
+Author: Matthijs Kooijman
+Description: Let make install install separate files rather than a single tarball
+ This makes `make install` work like OpenMSX, allowing it to be used for
+ the Debian package. This probably needs a cleaner fix upstream (see
+ linked issue), but until then this is simple and works.
+Bug: https://github.com/OpenTTD/OpenSFX/issues/47
+--- a/Makefile
++++ b/Makefile
+@@ -513,8 +513,8 @@ ifeq ($(INSTALL_DIR),"")
+ 	$(_V) false
+ endif
+ 	$(_E) "[INSTALL] to $(INSTALL_DIR)"
+-	$(_V) install -d $(INSTALL_DIR)
+-	$(_V) install -m644 $< $(INSTALL_DIR)
++	$(_V) install -d $(INSTALL_DIR)/$(DIR_NAME)
++	$(_V) install -m644 $(DIR_NAME)/* $(INSTALL_DIR)/$(DIR_NAME)
+ 
+ # misc. convenience targets like 'langcheck'
+ -include $(SCRIPT_DIR)/Makefile_misc

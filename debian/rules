@@ -1,4 +1,51 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
 
 %:
 	dh $@
+
+# This follows convention by upstream's make install, which by defaults
+# uses a versioned DIR_NAME named to be installed as a subdir of
+# INSTALL_DIR (but also used as a local directory to prepare the bundle,
+# so we cannot just use DIR_NAME=.). By setting INSTALL_DIR and DIR_NAME
+# appropriately, the Makefile will do exactly what we need.
+INSTALL_DIR=usr/share/games/openttd/baseset
+DIR_NAME=opensfx
+
+INSTALL_ROOT=debian/openttd-opensfx
+DATA_DIR=$(INSTALL_DIR)/$(DIR_NAME)
+DOC_DIR=/usr/share/doc/openttd-opensfx
+
+OPTIONS=
+OPTIONS += "INSTALL_DIR=$(INSTALL_ROOT)/$(INSTALL_DIR)"
+OPTIONS += "DIR_NAME=$(DIR_NAME)"
+ifeq (,$(filter terse,$(DEB_BUILD_OPTIONS)))
+# By default, _V is set to @ to suppress commands, clear it to *show*
+# commands.
+OPTIONS += "_V="
+endif
+
+override_dh_auto_build:
+	make $(OPTIONS)
+
+override_dh_auto_install:
+	make install $(OPTIONS)
+	# In the datadir, replace the readme and changelog with symlinks
+	# to /usr/share/doc to save space.
+	dh_link $(DOC_DIR)/readme.txt $(DATA_DIR)/readme.txt
+	dh_link $(DOC_DIR)/changelog $(DATA_DIR)/changelog.txt
+
+override_dh_installdocs:
+	dh_installdocs docs/readme.txt
+
+override_dh_installchangelogs:
+	dh_installchangelogs docs/changelog.txt
+
+override_dh_auto_test:
+	# There is no meaningful test suite, but `make test` generates
+	# output, so override with a nop.
+
+override_dh_auto_clean:
+	# Don't use dh_auto_clean. It thinks make distclean is valid becaue
+	# it generates output (dependency analysis) before erroring out.
+	make clean $(OPTIONS)
